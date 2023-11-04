@@ -1,21 +1,17 @@
 <template>
   <div class="posts">
-    <v-card class="post d-flex justify-space-between" v-for="post in posts" :key="post.id">
-      <div>
-        <div><strong>Название:</strong> {{ post.title }}</div>
-        <div><strong>Описание:</strong> {{ post.subtitle }}</div>
-      </div>
-      <div>
-        <v-btn color="deep-orange" variant="outlined">Удалить пост</v-btn>
-      </div>
-    </v-card>
+    <PostItem :post="post" v-for="post in posts" :key="post.id" />
   </div>
 </template>
 
 <script>
+import PostItem from "@/components/PostItem.vue"
 export default {
   name: "PostList",
   props: ['posts'],
+  components: {
+    PostItem,
+  }
 }
 </script>
 
