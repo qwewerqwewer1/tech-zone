@@ -10,7 +10,7 @@ export default new Vuetify({
     },
     themes: {
       dark: {
-        background: '#292930',
+        background: '#2f2f4f', // не сработал пока что
       },
     },
       dark: true,

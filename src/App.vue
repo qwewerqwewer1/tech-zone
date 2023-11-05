@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-main class="pa-10">
-      <PostForm @createPost="pushPost" />
-      <PostList :posts="posts" />
+      <PostForm @emit_createPost="pushPost" />
+      <PostList :posts="posts" @remove="removePost" />
     </v-main>
   </v-app>
 </template>
@@ -30,6 +30,9 @@ export default {
   methods: {
     pushPost(post) {
       this.posts.push(post)
+    },
+    removePost(post) {
+      this.posts = this.posts.filter(p => p.id !== post.id)
     }
   }
 };
